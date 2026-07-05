@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Publication | Handwriting Jobs</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;705;800&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fbfaf5;
+            color: #10201d;
+        }
+
+        .btn-press:active {
+            transform: scale(0.97);
+        }
+
+        .ambient-glow {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(15, 118, 110, 0.08) 0%, transparent 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="relative min-h-screen overflow-x-hidden">
+
+    <!-- Ambient Glow effects -->
+    <div class="ambient-glow top-0 left-0"></div>
+    <div class="ambient-glow top-1/2 right-0"></div>
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-[#fbfaf5]/90 backdrop-blur-md border-b border-[#dfd8c7] transition-all">
+        <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-full bg-teal-800 flex items-center justify-center text-white font-extrabold text-sm shadow-md">A</div>
+                <div class="flex flex-col">
+                    <span class="font-serif font-extrabold text-teal-950 text-sm tracking-tight leading-none">Alpha Publication</span>
+                    <span class="text-[9px] text-[#9c988d] font-bold uppercase tracking-wider mt-1">Handwriting Services</span>
+                </div>
+            </div>
+            
+            <a href="https://t.me/alphapublications" target="_blank" class="bg-teal-850 hover:bg-teal-900 text-white font-bold text-xs py-2 px-4 rounded-full flex items-center gap-1.5 shadow-sm btn-press transition">
+                <i class="fa-brands fa-telegram"></i> JOIN TELEGRAM
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="max-w-4xl mx-auto px-4 pt-12 pb-16 text-center space-y-6 relative">
+        <div class="inline-flex items-center gap-2 px-3 py-1 bg-teal-50 border border-teal-200/50 rounded-full text-teal-700 text-[10px] font-black uppercase tracking-wider shadow-sm">
+            <i class="fa-solid fa-stamp text-[9px]"></i> Government Approved Handwriting Job
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-extrabold text-[#10201d] leading-[1.1] tracking-tight">
+            Turn Your Handwriting Into <span class="text-teal-700 italic">Earnings</span>
+        </h1>
+        
+        <p class="text-sm sm:text-base text-slate-500 max-w-xl mx-auto leading-relaxed">
+            We provide structured work-from-home handwriting projects across India. No prior experience required. Earn easily from the comfort of your home.
+        </p>
+
+        <div class="pt-4">
+            <a href="https://t.me/alphapublications" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 bg-teal-700 hover:bg-teal-855 text-white font-extrabold text-sm rounded-full shadow-lg shadow-teal-700/20 btn-press transition">
+                <i class="fa-brands fa-telegram text-base"></i> Apply Now On Telegram
+            </a>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="max-w-5xl mx-auto px-4 py-8 grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Feature 1 -->
+        <div class="bg-emerald-50/50 border border-emerald-100 rounded-2xl p-4 flex flex-col items-center text-center space-y-2">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-lg"><i class="fa-solid fa-house"></i></div>
+            <h3 class="text-xs font-black text-slate-900">Work From Home</h3>
+            <p class="text-[10px] text-slate-500">Flexible environment</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="bg-purple-50/50 border border-purple-100 rounded-2xl p-4 flex flex-col items-center text-center space-y-2">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-600 flex items-center justify-center text-lg"><i class="fa-solid fa-clock"></i></div>
+            <h3 class="text-xs font-black text-slate-900">Flexible Timing</h3>
+            <p class="text-[10px] text-slate-500">Work at your own pace</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="bg-orange-50/50 border border-orange-100 rounded-2xl p-4 flex flex-col items-center text-center space-y-2">
+            <div class="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-600 flex items-center justify-center text-lg"><i class="fa-solid fa-pen-nib"></i></div>
+            <h3 class="text-xs font-black text-slate-900">Simple Handwriting</h3>
+            <p class="text-[10px] text-slate-500">Hindi/English text copy</p>
+        </div>
+        <!-- Feature 4 -->
+        <div class="bg-blue-50/50 border border-blue-100 rounded-2xl p-4 flex flex-col items-center text-center space-y-2">
+            <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center text-lg"><i class="fa-solid fa-circle-question"></i></div>
+            <h3 class="text-xs font-black text-slate-900">Guidance Provided</h3>
+            <p class="text-[10px] text-slate-500">Structured instructions</p>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section class="max-w-5xl mx-auto px-4 py-16 space-y-8">
+        <div class="text-center space-y-2">
+            <h2 class="text-2xl sm:text-3xl font-serif font-black text-slate-900">Project Plans & Slots</h2>
+            <p class="text-xs text-slate-400">Select the plan that fits your schedules and earning goals.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Plan 1 -->
+            <div class="bg-white border border-[#dfd8c7] rounded-3xl p-6 space-y-6 flex flex-col justify-between shadow-sm relative overflow-hidden">
+                <div class="space-y-4">
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-[9px] font-black rounded uppercase tracking-wider border border-slate-100 inline-block">Basic Project</span>
+                    <h3 class="text-xl font-bold font-serif text-slate-900">Plan 1 — 50 Pages</h3>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-teal-700 text-3xl font-extrabold font-mono">₹22,000</span>
+                        <span class="text-[10px] text-slate-400 font-semibold">/ Project Earning</span>
+                    </div>
+                    <div class="w-full h-[1px] bg-slate-100"></div>
+                    <ul class="space-y-2.5 text-xs text-slate-500">
+                        <li><i class="fa-solid fa-check text-teal-600 mr-2"></i> Time Limit: <strong>7 Days</strong></li>
+                        <li><i class="fa-solid fa-check text-teal-600 mr-2"></i> Pages to Write: <strong>50 Pages</strong></li>
+                        <li><i class="fa-solid fa-check text-teal-600 mr-2"></i> Registration Fee: <strong>₹550 (100% Refundable)</strong></li>
+                    </ul>
+                </div>
+                <a href="https://t.me/alphapublications" target="_blank" class="w-full py-3 bg-teal-50 border border-teal-200 text-teal-750 text-center font-bold text-xs rounded-xl hover:bg-teal-700 hover:text-white transition btn-press block">Select Basic</a>
+            </div>
+
+            <!-- Plan 2 (Highlighted) -->
+            <div class="bg-white border-2 border-teal-600 rounded-3xl p-6 space-y-6 flex flex-col justify-between shadow-md relative overflow-hidden">
+                <div class="absolute top-0 right-0 bg-teal-600 text-white text-[8px] font-black uppercase tracking-wider px-3.5 py-1 rounded-bl-xl shadow-sm">Most Popular</div>
+                <div class="space-y-4">
+                    <span class="px-2.5 py-1 bg-teal-50 text-teal-700 text-[9px] font-black rounded uppercase tracking-wider border border-teal-100 inline-block">Standard Project</span>
+                    <h3 class="text-xl font-bold font-serif text-slate-900">Plan 2 — 80 Pages</h3>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-teal-700 text-3xl font-extrabold font-mono">₹30,000</span>
+                        <span class="text-[10px] text-slate-400 font-semibold">/ Project Earning</span>
+                    </div>
+                    <div class="w-full h-[1px] bg-slate-100"></div>
+                    <ul class="space-y-2.5 text-xs text-slate-500">
+                        <li><i class="fa-solid fa-check text-teal-600 mr-2"></i> Time Limit: <strong>15 Days</strong></li>
+                        <li><i class="fa-solid fa-check text-teal-600 mr-2"></i> Pages to Write: <strong>80 Pages</strong></li>
+                        <li><i class="fa-solid fa-check text-teal-600 mr-2"></i> Registration Fee: <strong>₹850 (100% Refundable)</strong></li>
+                    </ul>
+                </div>
+                <a href="https://t.me/alphapublications" target="_blank" class="w-full py-3 bg-teal-700 text-white text-center font-bold text-xs rounded-xl hover:bg-teal-800 transition btn-press block">Select Standard</a>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="bg-white border border-[#dfd8c7] rounded-3xl p-6 space-y-6 flex flex-col justify-between shadow-sm relative overflow-hidden">
+                <div class="space-y-4">
+                    <span class="px-2.5 py-1 bg-slate-50 text-slate-600 text-[9px] font-black rounded uppercase tracking-wider border border-slate-100 inline-block">Premium Project</span>
+                    <h3 class="text-xl font-bold font-serif text-slate-900">Plan 3 — 120 Pages</h3>
+                    <div class="flex items-baseline gap-1">
+                        <span class="text-teal-700 text-3xl font-extrabold font-mono">₹48,000</span>
+                        <span class="text-[10px] text-slate-400 font-semibold">/ Project Earning</span>
+                    </div>
+                    <div class="w-full h-[1px] bg-slate-100"></div>
+                    <ul class="space-y-2.5 text-xs text-slate-500">
+                        <li><i class="fa-solid fa-check text-teal-600 mr-2"></i> Time Limit: <strong>15–30 Days</strong></li>
+                        <li><i class="fa-solid fa-check text-teal-600 mr-2"></i> Pages to Write: <strong>120 Pages</strong></li>
+                        <li><i class="fa-solid fa-check text-teal-600 mr-2"></i> Registration Fee: <strong>₹1,250 (100% Refundable)</strong></li>
+                    </ul>
+                </div>
+                <a href="https://t.me/alphapublications" target="_blank" class="w-full py-3 bg-teal-50 border border-teal-200 text-teal-750 text-center font-bold text-xs rounded-xl hover:bg-teal-700 hover:text-white transition btn-press block">Select Premium</a>
+            </div>
+        </div>
+        
+        <!-- Refund Guarantee Alert -->
+        <div class="bg-emerald-50 border border-emerald-250 rounded-2xl p-4 flex gap-4 max-w-2xl mx-auto">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-lg shrink-0"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="space-y-1">
+                <h4 class="text-xs font-black text-emerald-950">Refundable Registration Security</h4>
+                <p class="text-[11px] text-emerald-700 leading-relaxed">
+                    The registration fee serves as security for the onboarding materials. It is <strong>100% refunded</strong> directly to your UPI ID alongside your first project payment.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="max-w-4xl mx-auto px-4 py-8 space-y-8">
+        <div class="text-center space-y-2">
+            <h2 class="text-2xl sm:text-3xl font-serif font-black text-slate-900">How It Works</h2>
+            <p class="text-xs text-slate-400">Start your writing project in three simple steps.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white border border-[#dfd8c7] rounded-3xl p-6 text-center space-y-3 relative shadow-sm">
+                <div class="w-10 h-10 rounded-full bg-teal-800 text-white font-extrabold text-sm flex items-center justify-center mx-auto shadow-md">1</div>
+                <h4 class="text-sm font-extrabold text-slate-900">Select a Project</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Choose from our Basic, Standard, or Premium plans based on your capacity.</p>
+            </div>
+            <div class="bg-white border border-[#dfd8c7] rounded-3xl p-6 text-center space-y-3 relative shadow-sm">
+                <div class="w-10 h-10 rounded-full bg-teal-800 text-white font-extrabold text-sm flex items-center justify-center mx-auto shadow-md">2</div>
+                <h4 class="text-sm font-extrabold text-slate-900">Get Approved</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Register successfully to receive your onboarding materials and 50% advance payout.</p>
+            </div>
+            <div class="bg-white border border-[#dfd8c7] rounded-3xl p-6 text-center space-y-3 relative shadow-sm">
+                <div class="w-10 h-10 rounded-full bg-teal-800 text-white font-extrabold text-sm flex items-center justify-center mx-auto shadow-md">3</div>
+                <h4 class="text-sm font-extrabold text-slate-900">Start Earning</h4>
+                <p class="text-xs text-slate-500 leading-relaxed">Complete the copy writing within the timeline and receive your remaining 50% payout.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="max-w-3xl mx-auto px-4 py-16 space-y-6">
+        <h2 class="text-2xl font-serif font-black text-slate-900 text-center">Frequently Asked Questions</h2>
+        
+        <div class="space-y-4">
+            <!-- Q1 -->
+            <div class="bg-white border border-[#dfd8c7] rounded-2xl p-5 space-y-2 shadow-sm">
+                <h4 class="text-xs font-black text-slate-900 flex items-center gap-2"><i class="fa-solid fa-circle-question text-teal-600"></i> Is any prior experience required?</h4>
+                <p class="text-xs text-slate-500 leading-relaxed pl-5">No experience is needed. If you can write neatly in Hindi or English, you qualify. Complete project guidelines and templates are provided before you begin.</p>
+            </div>
+            <!-- Q2 -->
+            <div class="bg-white border border-[#dfd8c7] rounded-2xl p-5 space-y-2 shadow-sm">
+                <h4 class="text-xs font-black text-slate-900 flex items-center gap-2"><i class="fa-solid fa-circle-question text-teal-600"></i> Is the registration fee refundable?</h4>
+                <p class="text-xs text-slate-500 leading-relaxed pl-5">Yes, 100%. The registration amount is returned along with your project payment after successful submission and quality review checks.</p>
+            </div>
+            <!-- Q3 -->
+            <div class="bg-white border border-[#dfd8c7] rounded-2xl p-5 space-y-2 shadow-sm">
+                <h4 class="text-xs font-black text-slate-900 flex items-center gap-2"><i class="fa-solid fa-circle-question text-teal-600"></i> How quickly is payment processed?</h4>
+                <p class="text-xs text-slate-500 leading-relaxed pl-5">Payment is processed within 24 hours of submission verification, directly to your registered UPI address (PhonePe, GPay, Paytm, etc.).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-teal-950 text-teal-200 py-12 px-4 border-t border-teal-900">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white font-extrabold text-xs">A</div>
+                    <span class="font-serif font-extrabold text-white text-sm">Alpha Publication</span>
+                </div>
+                <p class="text-xs text-teal-300 leading-relaxed max-w-sm">Providing authentic work-from-home handwriting opportunities India-wide since 2026. All registration fees are fully transparent and refundable.</p>
+            </div>
+            
+            <div class="text-left md:text-right space-y-4">
+                <span class="text-[10px] text-teal-400 font-bold uppercase tracking-wider block">Connected With Us</span>
+                <a href="https://t.me/alphapublications" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-teal-800 hover:bg-teal-700 text-white font-bold text-xs rounded-xl shadow-lg transition btn-press">
+                    <i class="fa-brands fa-telegram text-sm"></i> Apply Now On Telegram
+                </a>
+            </div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto border-t border-teal-900/60 mt-8 pt-6 flex justify-between items-center text-[10px] text-teal-400">
+            <span>&copy; 2026 Alpha Publication. All rights reserved.</span>
+            <span class="font-bold">Safe Gateway Certified</span>
+        </div>
+    </footer>
+
+    <!-- Popup Vacancy Modal (appears after 2 seconds) -->
+    <div id="vacancy-modal" class="fixed inset-0 z-[2000] bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-white border border-[#dfd8c7] rounded-3xl p-6 max-w-sm w-full shadow-2xl relative space-y-4 animate-in fade-in duration-300">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-7 h-7 rounded-full bg-slate-50 border border-slate-100 flex items-center justify-center text-slate-400 hover:bg-slate-100 btn-press"><i class="fa-solid fa-xmark text-xs"></i></button>
+            
+            <div class="w-12 h-12 rounded-2xl bg-teal-150 text-teal-700 flex items-center justify-center text-lg shadow-sm mx-auto mb-2">
+                <i class="fa-solid fa-business-time"></i>
+            </div>
+            
+            <div class="text-center space-y-1">
+                <span class="text-[9px] font-black text-teal-600 uppercase tracking-widest px-2.5 py-0.5 bg-teal-50 border border-teal-100 rounded-full">Vacancy Open Now</span>
+                <h3 class="text-lg font-serif font-black text-slate-900">Start Earning Today</h3>
+                <p class="text-[11px] text-slate-500 leading-relaxed">
+                    Structured copywriting files are waiting. Register now to claim your onboarding kit and a 50% advance payout!
+                </p>
+            </div>
+            
+            <a href="https://t.me/alphapublications" target="_blank" class="w-full py-3 bg-teal-700 hover:bg-teal-800 text-white font-extrabold text-xs rounded-xl shadow-lg transition btn-press flex items-center justify-center gap-2 uppercase">
+                <i class="fa-brands fa-telegram"></i> Apply Now On Telegram
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function closeModal() {
+            document.getElementById('vacancy-modal').classList.add('hidden');
+        }
+
+        window.onload = () => {
+            setTimeout(() => {
+                document.getElementById('vacancy-modal').classList.remove('hidden');
+            }, 2500);
+        };
+    </script>
+</body>
+</html>

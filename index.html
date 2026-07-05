@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIPPER | Professional Admin Suite</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-glow: rgba(59, 130, 246, 0.5);
+            --bg-dark: #020617;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: #f8fafc;
+            overflow: hidden;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* High-End Mesh Gradient Background */
+        .mesh-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-color: var(--bg-dark);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(30, 64, 175, 0.2) 0px, transparent 50%);
+            transition: background 0.3s ease;
+        }
+
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        }
+
+        .tool-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: block;
+            text-decoration: none;
+        }
+
+        .tool-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .tool-card:active {
+            transform: scale(0.98);
+        }
+
+        /* Animations */
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.95) translateY(10px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .animate-in {
+            animation: fadeInScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Scrollbar styling */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 5px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(59, 130, 246, 0.3);
+        }
+    </style>
+</head>
+<body class="p-4">
+    <div class="mesh-bg" id="mesh-gradient"></div>
+
+    <!-- Main Dashboard -->
+    <div id="dashboard" class="w-full max-w-[950px] h-[90vh] flex flex-col animate-in">
+        <div class="glass-panel rounded-[2.5rem] flex flex-col h-full overflow-hidden">
+            <!-- Top Navigation Bar -->
+            <header class="px-8 py-6 border-b border-white/5 flex items-center justify-between bg-slate-900/20">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-blue-600/20 flex items-center justify-center border border-blue-500/30">
+                        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-black text-white tracking-tight uppercase">Tipper Tools</h2>
+                        <div class="flex items-center gap-2">
+                            <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/50"></span>
+                            <p class="text-slate-500 text-[10px] font-bold tracking-widest uppercase">System Operational • Node: v4.0.2</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <div class="hidden md:flex flex-col items-end mr-2">
+                        <p class="text-xs font-bold text-white uppercase">ADMINISTRATOR</p>
+                        <p class="text-[10px] text-blue-400 font-semibold uppercase tracking-tighter">Authorized Session</p>
+                    </div>
+                    <button onclick="window.location.reload()" class="p-3 rounded-xl bg-white/5 hover:bg-blue-500/10 text-slate-400 hover:text-blue-400 border border-white/5 transition-all" title="Refresh System">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Scrollable Content Grid -->
+            <div class="flex-1 overflow-y-auto custom-scrollbar p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- CATEGORY: LOGISTICS -->
+                    <section class="space-y-4">
+                        <div class="flex items-center gap-3 px-2 mb-4">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+                            <h3 class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Logistics Intelligence</h3>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-3">
+                            <a class='tool-card p-4 rounded-2xl flex items-center gap-4 group' href='/delieveryverifier.html'>
+                                <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center transition-colors group-hover:bg-emerald-500 group-hover:text-white">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h4 class="text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">Delivery Verifier</h4>
+                                    <p class="text-[10px] text-slate-500 font-semibold uppercase">Endpoint Validation</p>
+                                </div>
+                                <svg class="w-4 h-4 text-slate-600 group-hover:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </a>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <a class='tool-card p-4 rounded-2xl group text-center' href='/deliverycharge.html'>
+                                    <p class="text-[10px] text-blue-500 font-bold mb-1">MODULE V1</p>
+                                    <h4 class="text-xs font-bold text-white">D-Charge</h4>
+                                </a>
+                                <a class='tool-card p-4 rounded-2xl group text-center' href='/bank-verify.html'>
+                                    <p class="text-[10px] text-blue-400 font-bold mb-1">MODULE V2</p>
+                                    <h4 class="text-xs font-bold text-white">Bank Verification Charge</h4>
+                                </a>
+                                <a class='tool-card p-4 rounded-2xl group text-center' href='/material.html'>
+                                    <p class="text-[10px] text-blue-500 font-bold mb-1">CORE</p>
+                                    <h4 class="text-xs font-bold text-white">Material Charge</h4>
+                                </a>
+                                <a class='tool-card p-4 rounded-2xl group text-center' href='/material2.html'>
+                                    <p class="text-[10px] text-blue-500 font-bold mb-1">ADVANCED</p>
+                                    <h4 class="text-xs font-bold text-white">Material v2</h4>
+                                </a>
+                                <a class='tool-card p-4 rounded-2xl group text-center col-span-2' href='/deliverycharge2.html'>
+                                    <p class="text-[10px] text-blue-300 font-bold mb-1">ENTERPRISE</p>
+                                    <h4 class="text-xs font-bold text-white">D-Charge Ultimate</h4>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- CATEGORY: FINANCIALS -->
+                    <section class="space-y-4">
+                        <div class="flex items-center gap-3 px-2 mb-4">
+                            <div class="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+                            <h3 class="text-xs font-black text-slate-400 uppercase tracking-[0.2em]">Financial Suite</h3>
+                        </div>
+
+                        <div class="grid grid-cols-1 gap-3">
+                            <a class='tool-card p-4 rounded-2xl border-purple-500/20 bg-purple-500/5 group flex items-center gap-4' href='/ttdscharg.html'>
+                                <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center transition-all group-hover:scale-110">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-sm font-black text-white group-hover:text-purple-400 transition-colors">TTDSCHARG Enterprise</h4>
+                                    <p class="text-[10px] text-slate-500 font-semibold uppercase">Global TDS Calculation</p>
+                                </div>
+                            </a>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <a class='tool-card p-4 rounded-2xl text-center' href='/tdscharge0.html'>
+                                    <span class="text-[10px] text-purple-400 font-bold block mb-1">CURRENT</span>
+                                    <h4 class="text-xs font-bold text-white">TDS v2</h4>
+                                </a>
+                                <a class='tool-card p-4 rounded-2xl text-center' href='/tipper.html'>
+                                    <span class="text-[10px] text-blue-400 font-bold block mb-1">REGISTRATION</span>
+                                    <h4 class="text-xs font-bold text-white">Reg. Slip</h4>
+                                </a>
+                                <a class='tool-card p-4 rounded-2xl text-center col-span-2' href='/c.html'>
+                                    <span class="text-[10px] text-blue-400 font-bold block mb-1">PAYROLL</span>
+                                    <h4 class="text-xs font-bold text-white">Salary Slip</h4>
+                                </a>
+                                <a class='tool-card p-4 rounded-2xl text-center col-span-2' href='/axis.html'>
+                                    <span class="text-[10px] text-blue-400 font-bold block mb-1">PAYROLL</span>
+                                    <h4 class="text-xs font-bold text-white">AXIS BANK Slip</h4>
+                                </a>
+                                <a class='tool-card p-4 rounded-2xl text-center col-span-2' href='/withdrawal.html'>
+                                    <span class="text-[10px] text-blue-400 font-bold block mb-1">CHARGE</span>
+                                    <h4 class="text-xs font-bold text-white">WITHDRAWAL charge</h4>
+                                </a>
+                                <a class='tool-card p-4 rounded-2xl text-center col-span-2' href='/imps.html'>
+                                    <span class="text-[10px] text-blue-400 font-bold block mb-1">CHARGE</span>
+                                    <h4 class="text-xs font-bold text-white">IMPS VERIFICATION</h4>
+                                </a>
+                            </div>
+
+                            <a class='tool-card p-4 rounded-2xl flex items-center gap-4 group' href='/digitalverification.html'>
+                                <div class="w-10 h-10 rounded-lg bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                </div>
+                                <h4 class="text-xs font-bold text-white">Digital Verification Hub</h4>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- CATEGORY: HUB -->
+                    <section class="md:col-span-2 space-y-4 pt-4 border-t border-white/5">
+                        <h3 class="text-xs font-black text-slate-400 uppercase tracking-[0.2em] px-2">Documentation & Status Hub</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <a class='tool-card p-5 rounded-[1.5rem] bg-teal-500/5 hover:bg-teal-500/10 border-teal-500/10' href='/paymentstatus.html'>
+                                <div class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center mb-3">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+                                </div>
+                                <h4 class="text-sm font-bold text-white">Payment Tracker</h4>
+                                <p class="text-[10px] text-slate-500 font-bold uppercase mt-1">Ledger Monitoring</p>
+                            </a>
+                            <a class='tool-card p-5 rounded-[1.5rem] bg-teal-500/5 hover:bg-teal-500/10 border-teal-500/10' href='/reject.html'>
+                                <div class="w-10 h-10 rounded-xl bg-teal-500/20 text-teal-400 flex items-center justify-center mb-3">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+                                </div>
+                                <h4 class="text-sm font-bold text-white">BANK VERIFICATION</h4>
+                                <p class="text-[10px] text-slate-500 font-bold uppercase mt-1">Ledger Monitoring</p>
+                            </a>
+                            <a class='tool-card p-5 rounded-[1.5rem] bg-indigo-500/5 hover:bg-indigo-500/10 border-indigo-500/10' href='/landing.html'>
+                                <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center mb-3">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                                </div>
+                                <h4 class="text-sm font-bold text-white">Main Landing Page</h4>
+                                <p class="text-[10px] text-slate-500 font-bold uppercase mt-1">alphapublication.com</p>
+                            </a>
+                            <a class='tool-card p-5 rounded-[1.5rem] bg-indigo-500/5 hover:bg-indigo-500/10 border-indigo-500/10' href='/web.html'>
+                                <div class="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center mb-3">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                </div>
+                                <h4 class="text-sm font-bold text-white">Client Portal Page</h4>
+                                <p class="text-[10px] text-slate-500 font-bold uppercase mt-1">web.alphapublication.com</p>
+                            </a>
+                            <div class='tool-card p-5 rounded-[1.5rem] bg-slate-800/10 border-white/5 flex items-center justify-center italic text-slate-600 text-[10px] uppercase tracking-widest col-span-2'>
+                                Additional Modules Locked
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Footer Stats -->
+            <footer class="px-8 py-5 border-t border-white/5 bg-slate-950/40 flex flex-wrap justify-between items-center gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="flex -space-x-2">
+                        <div class="w-6 h-6 rounded-full bg-blue-600 border-2 border-slate-900 flex items-center justify-center text-[8px] font-bold">S</div>
+                        <div class="w-6 h-6 rounded-full bg-indigo-600 border-2 border-slate-900 flex items-center justify-center text-[8px] font-bold">A</div>
+                    </div>
+                    <span class="text-[10px] text-slate-500 font-bold tracking-widest uppercase">Encryption Active: AES-256</span>
+                </div>
+                <div class="flex items-center gap-6">
+                    <div class="text-right">
+                        <p class="text-[9px] text-slate-500 font-bold uppercase mb-1">Connection Integrity</p>
+                        <p class="text-[10px] text-emerald-400 font-black uppercase">Verified Secure</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Mouse-reactive Mesh Effect
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            
+            document.getElementById('mesh-gradient').style.backgroundImage = `
+                radial-gradient(at ${x}% ${y}%, rgba(59, 130, 246, 0.25) 0px, transparent 40%),
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(147, 51, 234, 0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(30, 64, 175, 0.2) 0px, transparent 50%)
+            `;
+        });
+    </script>
+</body>
+</html>
